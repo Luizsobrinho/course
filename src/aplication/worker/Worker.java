@@ -2,7 +2,6 @@ package aplication.worker;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Iterator;
 import java.util.List;
 
 public class Worker {
@@ -39,7 +38,7 @@ public class Worker {
 	public void removerContract(HourContract contract) {
 		this.contracts.remove(contract);
 	}
-	
+
 	public double income(int year, int month) {
 		double soma = baseSalary;
 		Calendar cal = Calendar.getInstance();
@@ -47,14 +46,14 @@ public class Worker {
 			cal.setTime(con.getDate());
 			int con_year = cal.get(Calendar.YEAR);
 			int con_month = 1 + cal.get(Calendar.MONTH);
-			
+
 			if (con_year == year && con_month == month) {
 				soma += con.totalValue();
 			}
 		}
 		return soma;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -89,6 +88,12 @@ public class Worker {
 
 	public void setDepartment(Department department) {
 		this.department = department;
+	}
+
+	@Override
+	public String toString() {
+		return "Worker [name=" + name + ", level=" + level + ", baseSalary=" + baseSalary + ", department=" + department
+				+ ", contracts=" + contracts + "]";
 	}
 
 }
