@@ -40,18 +40,17 @@ public class Worker {
 	}
 
 	public double income(int year, int month) {
-		double soma = baseSalary;
+		double sum = baseSalary;
 		Calendar cal = Calendar.getInstance();
-		for (HourContract con : contracts) {
-			cal.setTime(con.getDate());
-			int con_year = cal.get(Calendar.YEAR);
-			int con_month = 1 + cal.get(Calendar.MONTH);
-
-			if (con_year == year && con_month == month) {
-				soma += con.totalValue();
+		for (HourContract c : contracts) {
+			cal.setTime(c.getDate());
+			int c_year = cal.get(Calendar.YEAR);
+			int c_month = 1 + cal.get(Calendar.MONTH);
+			if (year == c_year && month == c_month) {
+				sum += c.totalValue();
 			}
 		}
-		return soma;
+		return sum;
 	}
 
 	public String getName() {
