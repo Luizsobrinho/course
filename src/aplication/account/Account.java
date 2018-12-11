@@ -15,7 +15,7 @@ public class Account {
 		this.holder = holder;
 		this.balance = balance;
 	}
-
+	
 	public void withdraw(double amount) {
 		this.balance -= amount;
 	}
@@ -42,10 +42,6 @@ public class Account {
 
 	public double getBalance() {
 		return balance;
-	}
-
-	public void setBalance(double balance) {
-		this.balance = balance;
 	}
 
 }
