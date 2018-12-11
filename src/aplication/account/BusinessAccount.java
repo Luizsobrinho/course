@@ -15,7 +15,7 @@ public class BusinessAccount extends Account {
 
 	public void loan(double amount) {
 		if (amount <= loanLimit) {
-			deposit(amount);
+			balance += amount - 10.0;
 			System.out.println("Emprestimo realizado");
 		}
 
