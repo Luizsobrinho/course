@@ -4,32 +4,43 @@ import java.util.Date;
 
 public class Client {
 
-	private Date moment;
-	private OrderStatus status;
+	private String name;
+	private String email;
+	private Date birhtDate;
 
 	public Client() {
 
 	}
 
-	public Client(Date moment, OrderStatus status) {
-		this.moment = moment;
-		this.status = status;
+	public Client(String name, String email, Date birhtDate) {
+
+		this.name = name;
+		this.email = email;
+		this.birhtDate = birhtDate;
 	}
 
-	public Date getMoment() {
-		return moment;
+	public String getName() {
+		return name;
 	}
 
-	public void setMoment(Date moment) {
-		this.moment = moment;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public OrderStatus getStatus() {
-		return status;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setStatus(OrderStatus status) {
-		this.status = status;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Date getBirhtDate() {
+		return birhtDate;
+	}
+
+	public void setBirhtDate(Date birhtDate) {
+		this.birhtDate = birhtDate;
 	}
 
 }
