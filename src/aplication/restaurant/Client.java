@@ -1,12 +1,15 @@
 package aplication.restaurant;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Client {
-
+	
+	private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	
 	private String name;
 	private String email;
-	private Date birhtDate;
+	private Date birthDate;
 
 	public Client() {
 
@@ -16,7 +19,7 @@ public class Client {
 
 		this.name = name;
 		this.email = email;
-		this.birhtDate = birhtDate;
+		this.birthDate = birhtDate;
 	}
 
 	public String getName() {
@@ -36,11 +39,16 @@ public class Client {
 	}
 
 	public Date getBirhtDate() {
-		return birhtDate;
+		return birthDate;
 	}
 
 	public void setBirhtDate(Date birhtDate) {
-		this.birhtDate = birhtDate;
+		this.birthDate = birhtDate;
 	}
 
+	@Override
+	public String toString() {
+
+		return name + " (" + sdf.format(birthDate) + ") - " + email;
+	}
 }
