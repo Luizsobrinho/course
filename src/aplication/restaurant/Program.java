@@ -24,15 +24,31 @@ public class Program {
 
 		System.out.println("Enter order data: ");
 		System.out.println("Status: ");
-		String orderStatus = ler.nextLine();
-		ler.next();
+		OrderStatus status = OrderStatus.valueOf(ler.next());
+		Order order = new Order(new Date(), status, client);
+		
 		System.out.println("How many items to this order? ");
 		int cont = ler.nextInt();
-		
+
 		for (int i = 1; i <= cont; i++) {
-			System.out.println("Enter #"+ i +"item data:");
+			System.out.println("Enter #" + i + "item data:");
+			System.out.println("Product name: ");
+			ler.nextLine();
+			String nomeProduct = ler.nextLine();
+			System.out.println("Product price: ");
+			double priceProduct = ler.nextDouble();
+			System.out.println("Quantity: ");
+			int quantityProduct = ler.nextInt();
+
+			Product product = new Product(nomeProduct, priceProduct);
+
+			OrderItem orderItem = new OrderItem(quantityProduct, priceProduct, product);
+			order.additem(orderItem);
 		}
-		System.out.println(client.toString());
+		System.out.println();
+		System.out.println("ORDER SUMMARY:");
+		System.out.println(order);
+		// System.out.println(client.toString());
 		ler.close();
 	}
 }
