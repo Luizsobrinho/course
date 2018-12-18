@@ -21,7 +21,7 @@ public class Program {
 		//acc3.deposit(500);
 		// DOWCASTING = CONVERTER UM OBJETO DA superclasse PARA subCLASSE
 		
-		BusinessAccount acc4 = (BusinessAccount) acc2;// TypeCast
+		//BusinessAccount acc4 = (BusinessAccount) acc2;// TypeCast
 		
 		if (acc3 instanceof BusinessAccount) {
 			BusinessAccount acc5  = (BusinessAccount) acc3;
